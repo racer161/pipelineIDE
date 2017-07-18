@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PipeText Non-contentEditable WYSIWYG Editor</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1, maximum-scale=1">
+      
+    <!-- Load Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="/scripts/pipe.css" rel="stylesheet">
+      
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/ot.js"></script>
+    <script src="/scripts/pipeFrame.js"></script>
+    <script src="/scripts/networkManager.js"></script>
+    <script src="/scripts/layoutManager.js"></script>
+    <script src="/scripts/pipeSheet.js"></script>
+    <script src="/scripts/input.js"></script>
+    <script src="/scripts/cursor.js"></script>
+    <script src="/scripts/fontMetrics.js"></script>
+      
+  </head>
+  <body>
+      
+      
+    <script>
+        var pri = Math.floor(Math.random() * 0x1000000);
+        var ser = 0;
+        function getid() 
+        {
+            return (pri * 0x100000) + ser++;
+        }
+        var socket = io();
+        var nm = new networkManager(socket);
+        console.log(nm.pipeFrames);
+    </script>
+      
+  </body>
+</html>
